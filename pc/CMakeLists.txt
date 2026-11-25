@@ -10,7 +10,7 @@ project(gbrecomp C)
 # RC_DIRS: directories written by recomp.py (one per translated ROM, each with
 # its own --prefix); the executable runs whichever matches the player's ROM.
 set(RC_DIRS "${CMAKE_SOURCE_DIR}/../build/rc_en" CACHE STRING "recompiled C directories (;-separated)")
-set(GAME_NAME "pokegold" CACHE STRING "executable name")
+set(GAME_NAME "pokesilver" CACHE STRING "executable name")
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)

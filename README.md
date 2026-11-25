@@ -1,4 +1,4 @@
-# Pokémon Or — version PC native / native PC port
+# Pokémon Argent — version PC native / native PC port
 
 **Projet de fans, non affilié à Nintendo, Game Freak, The Pokémon Company ni
 à [pret](https://pret.github.io/).** C'est un fork du dépôt
@@ -8,34 +8,34 @@ IA et ne veut pas y être associé : n'envoyez rien d'ici à pret et ne les
 sollicitez pas à son sujet. Le port PC (dossier `pc/`) a été réalisé avec des
 agents IA.
 
-**Argent** : [Pokemon-PC/pokesilver-pc](https://github.com/Pokemon-PC/pokesilver-pc). Les deux
-versions partagent le même code ; `python pc/build.py` construit `pokegold` et `pokesilver`.
+**Or** : [Pokemon-PC/pokegold-pc](https://github.com/Pokemon-PC/pokegold-pc). Les deux
+versions partagent le même code ; ce dépôt suit celui d'Or (`python pc/build.py --exe pokesilver`).
 
 (English below)
 
 ## Français
 
-Pokémon Or qui tourne **nativement sur PC** (Windows, Linux), **sans
+Pokémon Argent qui tourne **nativement sur PC** (Windows, Linux), **sans
 émulateur**. Le code du jeu (assembleur Game Boy) est **traduit en C** par
 recompilation statique, puis compilé ; le matériel Game Boy Color est reproduit
 (écran ligne par ligne, son 4 canaux, manette, horloge, sauvegarde).
 
 - **Votre ROM est nécessaire** ; l'exécutable ne contient aucune donnée du jeu.
   ROM reconnues :
-  - Pokemon - Gold Version (USA, Europe)
-  - Pokemon - Version Or (France)
+  - Pokemon - Silver Version (USA, Europe)
+  - Pokemon - Version Argent (France)
 - **Langue** : anglais et français dans le même exécutable, choisis d'après la
-  ROM : `--lang en|fr`, ou dans `pokegold.ini` à côté du programme :
+  ROM : `--lang en|fr`, ou dans `pokesilver.ini` à côté du programme :
   ```
   lang=fr
-  rom_en=C:\...\Pokemon - Gold Version (USA, Europe).gbc
-  rom_fr=C:\...\Pokemon - Version Or (France).gbc
+  rom_en=C:\...\Pokemon - Silver Version (USA, Europe).gbc
+  rom_fr=C:\...\Pokemon - Version Argent (France).gbc
   ```
   Autres réglages : `fullscreen=1`, `scale=4`, `save=...`.
 - **Commandes** : flèches, X/Espace = A, Z/Ctrl = B, Entrée = Start,
   Retour arrière = Select, Tab = avance rapide, F11 = plein écran ; manette
   reconnue automatiquement.
-- **Sauvegarde** : `pokemon_gold.sav` / `pokemon_or.sav` à côté du programme, au format des émulateurs
+- **Sauvegarde** : `pokemon_silver.sav` / `pokemon_argent.sav` à côté du programme, au format des émulateurs
   (`.sav`) : une sauvegarde d'émulateur peut être reprise.
 
 ### Compiler
@@ -51,21 +51,21 @@ détails (méthode, outils de test, journal) sont dans
 
 ## English
 
-Pokémon Gold running **natively on PC** (Windows, Linux) **without an
+Pokémon Silver running **natively on PC** (Windows, Linux) **without an
 emulator**: the game's Game Boy assembly is **statically recompiled to C**
 and the Game Boy Color hardware is reproduced (scanline renderer, 4-channel sound,
 gamepad, real-time clock, save files).
 
 - **Your own ROM is required**; the executable holds no game data.
   Supported ROMs:
-  - Pokemon - Gold Version (USA, Europe)
-  - Pokemon - Version Or (France)
+  - Pokemon - Silver Version (USA, Europe)
+  - Pokemon - Version Argent (France)
 - **Language**: English and French in one executable, picked from the ROM
-  (`--lang en|fr`, or `lang=`, `rom_en=`, `rom_fr=` in `pokegold.ini`).
+  (`--lang en|fr`, or `lang=`, `rom_en=`, `rom_fr=` in `pokesilver.ini`).
 - **Build**: `python pc/build.py --rom-fr "<French ROM>"` (rgbds 1.0.x, make,
   Python 3, CMake, Ninja, Clang, SDL2). The generated C is not in the
   repository; it is produced at build time.
-- Saves: `pokemon_gold.sav` / `pokemon_or.sav`, emulator-compatible `.sav` files.
+- Saves: `pokemon_silver.sav` / `pokemon_argent.sav`, emulator-compatible `.sav` files.
 
 The original disassembly README is at
 [pret/pokegold](https://github.com/pret/pokegold#readme).
