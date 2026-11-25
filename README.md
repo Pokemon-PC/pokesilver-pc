@@ -24,13 +24,17 @@ recompilation statique, puis compilé ; le matériel Game Boy Color est reprodui
   ROM reconnues :
   - Pokemon - Silver Version (USA, Europe)
   - Pokemon - Version Argent (France)
-- **Langue** : anglais et français dans le même exécutable, choisis d'après la
-  ROM : `--lang en|fr`, ou dans `pokesilver.ini` à côté du programme :
+- **Où sont les ROM** : le jeu cherche dans l'ordre un chemin donné
+  (argument, `rom_en=` / `rom_fr=`), le dossier du programme, puis le dossier
+  `rom_dir` de `pokesilver.ini` (ou `--rom-dir`, variable `GB_ROM_DIR`). Le bon
+  fichier est reconnu **à son contenu** (empreinte de la ROM : version et
+  langue), quel que soit son nom : un lanceur n'a qu'à écrire `rom_dir`.
   ```
-  lang=fr
-  rom_en=C:\...\Pokemon - Silver Version (USA, Europe).gbc
-  rom_fr=C:\...\Pokemon - Version Argent (France).gbc
+  rom_dir = C:\...\roms
+  lang = fr
   ```
+- **Langue** : anglais et français dans le même exécutable : `--lang en|fr`
+  ou `lang=` (sinon, la première ROM reconnue).
   Autres réglages : `fullscreen=1`, `scale=4`, `save=...`.
 - **Commandes** : flèches, X/Espace = A, Z/Ctrl = B, Entrée = Start,
   Retour arrière = Select, Tab = avance rapide, F11 = plein écran ; manette
@@ -60,8 +64,12 @@ gamepad, real-time clock, save files).
   Supported ROMs:
   - Pokemon - Silver Version (USA, Europe)
   - Pokemon - Version Argent (France)
-- **Language**: English and French in one executable, picked from the ROM
-  (`--lang en|fr`, or `lang=`, `rom_en=`, `rom_fr=` in `pokesilver.ini`).
+- **ROM search**: an explicit path (argument, `rom_en=` / `rom_fr=`), then
+  the executable's folder, then `rom_dir` in `pokesilver.ini` (or `--rom-dir`,
+  `GB_ROM_DIR`); the right file is recognised by its content, whatever its
+  name.
+- **Language**: English and French in one executable (`--lang en|fr` or
+  `lang=` in `pokesilver.ini`).
 - **Build**: `python pc/build.py --rom-fr "<French ROM>"` (rgbds 1.0.x, make,
   Python 3, CMake, Ninja, Clang, SDL2). The generated C is not in the
   repository; it is produced at build time.
