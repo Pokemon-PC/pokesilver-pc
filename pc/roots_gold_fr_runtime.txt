@@ -19,3 +19,5 @@
 24:4A0F # runtime
 33:4F0B # runtime
 33:4FBB # runtime
+33:5CD3 # runtime
+33:6572 # runtime
